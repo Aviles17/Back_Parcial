@@ -37,12 +37,12 @@ public class libroaviles {
 
     @Override
     public String toString() {
-        return "Libro{" +
-                "titulo='" + titulo + '\'' +
-                ", referencia='" + referencia + '\'' +
-                ", autor='" + autor + '\'' +
+        return "{" +
+                "titulo=\"" + titulo + '\"' +
+                ", referencia=\"" + referencia + '\"' +
+                ", autor=\"" + autor + '\"' +
                 ", precio=" + precio +
-                ", ubicacion='" + ubicacion + '\'' +
+                ", ubicacion=\"" + ubicacion + '\"' +
                 '}';
     }
 

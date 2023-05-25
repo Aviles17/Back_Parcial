@@ -37,6 +37,7 @@ public class LibroController {
     public ResponseEntity<String> getlibros() throws Exception{
         Iterable<libroaviles> lib = libroRepository.findAll();
         HttpHeaders responseHeaders = new HttpHeaders();
+        System.out.print(lib.toString());
         return  new ResponseEntity<String>(lib.toString(), responseHeaders, HttpStatus.OK );
 
     }
