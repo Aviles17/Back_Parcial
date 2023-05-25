@@ -1,7 +1,7 @@
 package com.web.backend_parcial_web.controladores;
 
 import com.web.backend_parcial_web.interfaces.LibroRepository;
-import com.web.backend_parcial_web.modelo.Libro_Aviles;
+import com.web.backend_parcial_web.modelo.libroaviles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -26,7 +26,7 @@ public class LibroController {
                                                 @RequestParam Double precio,
                                                 @RequestParam String ubicacion) throws Exception{
 
-        Libro_Aviles libro = new Libro_Aviles(titulo,referencia,autor,precio,ubicacion);
+        libroaviles libro = new libroaviles(titulo,referencia,autor,precio,ubicacion);
         libroRepository.save(libro);
         HttpHeaders responseHeaders = new HttpHeaders();
         return  new ResponseEntity<String>( "{\"respuesta\":\"exito\"}", responseHeaders, HttpStatus.OK );
@@ -35,7 +35,7 @@ public class LibroController {
     @CrossOrigin
     @GetMapping(value = "/GetLibro", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> getlibros() throws Exception{
-        Iterable<Libro_Aviles> lib = libroRepository.findAll();
+        Iterable<libroaviles> lib = libroRepository.findAll();
         HttpHeaders responseHeaders = new HttpHeaders();
         return  new ResponseEntity<String>(lib.toString(), responseHeaders, HttpStatus.OK );
 
